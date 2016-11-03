@@ -1,0 +1,39 @@
+<div>
+  <md-toolbar color="primary" class="removeMargin">
+    <span>Todo App With Firebase and Material Design</span>
+  </md-toolbar>
+  <md-card class="mainDiv">
+    <md-card-title>
+      New Todo
+    </md-card-title>
+    <md-card-content>
+      <div layout="column" class="md-inline-form">
+        <form (ngSubmit)="writeUserData()">
+          <md-input class="demo-full-width" placeholder="Added Date (Disabled)" disabled value="{{currentDate | date}}">
+          </md-input>
+          <md-input placeholder="Title" style="width: 100%" [(ngModel)]="model.title" name="title"></md-input>
+          <md-input placeholder="Details" style="width: 100%" [(ngModel)]="model.details" name="details"></md-input>
+          <p>Priority:</p>
+          <md-radio-group [(ngModel)]="model.priority" [ngModelOptions]="{standalone: true}" [(ngModel)]="model.priority" name="priority">
+            <md-radio-button value="High" class="md-primary"> High </md-radio-button>
+            <md-radio-button value="Medium" checked="true" class="md-primary"> Medium </md-radio-button>
+            <md-radio-button value="Low" class="md-primary"> Low </md-radio-button>
+          </md-radio-group>
+          <div>
+            <button md-raised-button class="md-raised md-primary" type="submit">Primary</button>
+          </div>
+        </form>
+      </div>
+    </md-card-content>
+  </md-card>
+
+  <md-list>
+    <md-list-item class="md-3-line" *ngFor="let item of items | async">
+      <div class="md-list-item-text" layout="column">
+        <h3>{{item.title}}</h3>
+        <!--<h4>{{ item.what }}</h4>
+      <p>{{ item.notes }}</p>-->
+      </div>
+    </md-list-item>
+  </md-list>
+</div>

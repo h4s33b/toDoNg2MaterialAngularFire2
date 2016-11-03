@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+.removeMargin{
+    margin: 0px 0px !important;
+}
+
+.addMargin{
+    margin: 6px 6px !important;
+}
+
+.mainDiv{
+    width:600px;
+    margin: 20px auto;
+}
