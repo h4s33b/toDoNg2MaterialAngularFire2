@@ -2,7 +2,12 @@
   <md-toolbar color="primary" class="removeMargin">
     <span>Todo App With Firebase and Material Design</span>
   </md-toolbar>
-  <md-card class="mainDiv">
+
+   <button md-button class="md-icon-button" aria-label="More" (click)="showForm()">
+      <i md-icon>more_vert</i>
+    </button>
+
+  <md-card class="mainDiv" *ngIf="showFormData">
     <md-card-title>
       New Todo
     </md-card-title>
@@ -28,9 +33,11 @@
   </md-card>
 
   <md-list>
-    <md-list-item class="md-3-line" *ngFor="let item of items | async">
+    <md-list-item class="md-3-line" *ngFor="let item of items | async; let ind = index" ng-if="items.length">
       <div class="md-list-item-text" layout="column">
         <h3>{{item.title}}</h3>
+        <span (click)="updateData(item)">Click Here</span>
+        
         <!--<h4>{{ item.what }}</h4>
       <p>{{ item.notes }}</p>-->
       </div>
