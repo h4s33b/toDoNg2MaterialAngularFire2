@@ -29,7 +29,7 @@
       </div>
     </md-card-content>
   </md-card>
-  <md-card class="todoCardMargin" *ngIf="!showFormData" ng-if="items.length">
+  <md-card class="todoCardMargin" *ngIf="!showFormData || items.length">
     <md-card-title>
       List of Todos
     </md-card-title>
