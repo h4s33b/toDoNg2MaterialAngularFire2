@@ -25,15 +25,18 @@ export class AppComponent {
     if (this.model && this.model.title && this.model.details && this.model.priority) {
       this.items.push(this.model);
       this.model = { "title": "", "details": "", "priority": "Medium" };
+      this.showFormData = !this.showFormData;
     } else {
       alert("Please Enter All Fields.");
     }
   }
 
   updateData(todoData) {
-    // this.item1 = this.af.database.list('/items/'+i);
-    // this.item1 = this.items[i];
      this.model = { "title": todoData.title, "details": todoData.details, "priority": todoData.priority };
-    // this.model = this.af.database.list('/items').child(i);
+     this.showFormData = !this.showFormData;
+  }
+
+  showForm(){
+    this.showFormData = !this.showFormData;
   }
 }

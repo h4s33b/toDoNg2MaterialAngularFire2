@@ -1,0 +1,26 @@
+.customButtonPosition{
+  position: fixed;
+  right: 2%;
+  top: 10%;
+}
+
+.moveButtonsToCenter{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.todoCardMargin{
+  margin: 120px 20px 0px 20px;
+}
+
+.todoCardMargin th{
+  text-align: left !important;
+}
+
+.todoTitleWidth{
+  width: 85%;
+}
+
+.normalSizeButton{
+  max-width: 100px;
+}
