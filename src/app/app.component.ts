@@ -36,6 +36,10 @@ export class AppComponent {
      this.showFormData = !this.showFormData;
   }
 
+  deleteData(key){
+    this.items.remove(key);
+  }
+
   showForm(){
     this.showFormData = !this.showFormData;
   }

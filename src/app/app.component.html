@@ -37,13 +37,17 @@
       <tr>
         <th></th>
         <th class="todoTitleWidth">Title</th>
-        <th>Action</th>
+        <th colspan="2">Action</th>
       </tr>
       <tr *ngFor="let item of items | async; let ind = index">
         <td>{{ind+1}}.</td>
         <td>{{item.title}}</td>
         <td>
-          <button md-raised-button color="primary" md-line (click)="updateData(item)" class="normalSizeButton">Update
+          <button md-raised-button color="accent" md-line (click)="updateData(item)" class="normalSizeButton">Update
+          </button>
+        </td>
+        <td>
+          <button md-raised-button color="warn" md-line (click)="deleteData(item.$key)" class="normalSizeButton">Delete
           </button>
         </td>
       </tr>
